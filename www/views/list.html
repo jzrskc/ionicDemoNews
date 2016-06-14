@@ -1,0 +1,15 @@
+﻿<ion-view view-title="Hacker News">
+    <ion-content>
+        <ion-refresher pulling-text="Pull to refresh..."
+                       on-refresh="refresh()">
+        </ion-refresher>
+        <ion-list>
+            <ion-item collection-repeat="story in stories" ng-click="loadStoryInBrowser(story)">
+                {{story.title}}
+                <p><strong>by {{story.by}}</strong></p>
+                <br />
+                <p ng-bind-html="story.text"></p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
